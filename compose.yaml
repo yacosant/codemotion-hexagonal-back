@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    image: openjdk:17-jdk
+    container_name: hexagonal_app
+    ports:
+      - "8081:8080"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: ["java", "-jar", "target/hexagonal-0.0.1-SNAPSHOT.jar"]
